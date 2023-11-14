@@ -189,8 +189,8 @@ risposte.addEventListener('click', (evento)=>{
 })
 
 
-
-/* let timeStartSecond = 30;
+/* 
+ let timeStartSecond = 30;
 let time = 0.5 * 60;
 
 setInterval(timer, 1000)
@@ -211,6 +211,6 @@ if (time < 0) {
   clearInterval(timer);
 
 }
-} */
+} 
 
-/* risposte.children[i].innerText = arrayAnswers[i];  */
+ */
