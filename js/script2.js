@@ -170,5 +170,6 @@ time--;
 if (time < 0) {
 
   clearInterval(timer);
-}
 
+}
+}
