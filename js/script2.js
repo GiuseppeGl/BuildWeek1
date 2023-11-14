@@ -117,3 +117,28 @@ window.addEventListener('load',()=>{
   }
   arrayAnswers = [];
 })
+
+
+
+let timeStartSecond = 30;
+let time = 0.5 * 60;
+
+setInterval(timer, 2000)
+
+function timer() {
+
+let seconds = time % 60;
+
+let timerDom = document.querySelector('#timer')
+
+timerDom.innerHTML = `${seconds}`;
+
+
+time--;
+
+if (time < 0) {
+
+  clearInterval(timer);
+}
+
+}
