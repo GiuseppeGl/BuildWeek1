@@ -1,7 +1,7 @@
-body {
+body {                                          /* Impostazioni generali per tutta la pagina */
     background-image: url(../IMG/bg.jpg);
-    background-size: cover;
-    background-position: center;
+    background-size: cover;                     /* Impostazione dell'immagine affinché sia proporzionata a tutto lo schermo */
+    background-position: center;                /* L'immagine viene centrata allo schermo usato */
     color: white;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
@@ -52,23 +52,23 @@ form {
 }
 
 input[type="checkbox"] {
-    appearance: none;
-    border: 2px solid white;
+    appearance: none;                       /* Annullata la checkbox (graficamente) */
+    border: 2px solid white;              /* Impostato il bordo esterno della checkbox */
     width: 1rem;
     height: 1rem;
     margin: 0;
     margin-right: 0.7rem;
 }
 
-input[type="checkbox"]:checked {
-    appearance: auto;
+input[type="checkbox"]:checked {            /* Selezionato lo stato "checked"(flaggato) della box */
+    appearance: auto;                       /* Valore di default (necessario a seguito delle precedenti modifiche a "input[type="checkbox"]" */
 }
 
 #proceedbtn {
     cursor: pointer;
     padding: 1rem 4rem;
     border: none;
-    box-shadow: 0 0 23px  #00FFFF;
+    box-shadow: 0 0 23px  #00FFFF;       /* Valore 1: spostamento dx/sx | Valore 2: Spostamento su/giu | Valore 3: sfumatura | Valore 4: spread ombra | Valore 5: colore */
     text-transform: uppercase;
     background-color: #00FFFF;
     font-family: 'Inter', sans-serif;
