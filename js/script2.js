@@ -129,7 +129,7 @@ window.addEventListener('load',()=>{
 
      }
 
-
+     
 
   //console.dir(risposte)  
   arrayAnswers = []; 
@@ -140,7 +140,10 @@ window.addEventListener('load',()=>{
 })
 
 
+
 risposte.addEventListener('click', (evento)=>{
+  if(questionNumber < questions.length-1) {
+  risposte.innerHTML = ''
     if(evento.target.innerText === questions[questionNumber].correct_answer)
     {
       arrayRisposteAzzeccate.push(questions[questionNumber]);
@@ -149,6 +152,8 @@ risposte.addEventListener('click', (evento)=>{
     }
 
     questionNumber ++;
+
+
     h1.innerText = questions[questionNumber].question;                        //funzione che riporta la prima domanda che pesca dentro l'array questions
     arrayAnswers = [...questions[questionNumber].incorrect_answers, questions[questionNumber].correct_answer]
     console.log(arrayAnswers)
@@ -176,6 +181,11 @@ risposte.addEventListener('click', (evento)=>{
     console.log(arrayRisposteAzzeccate);
     console.log(arrayRisposteSbagliate);
 
+   
+  } else {
+    location.href = "index3.html"
+
+  }
 })
 
 
