@@ -1,9 +1,10 @@
 body {
     background-image: url(../IMG/bg.jpg);
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     font-family: 'Inter', sans-serif;
+    height: 100vh;
 }
 
 
