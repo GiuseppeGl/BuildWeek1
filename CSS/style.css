@@ -1,0 +1,71 @@
+body {
+    background-image: url(../IMG/bg.jpg);
+    background-size: cover;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    padding: 2rem 4%;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 6rem;
+    line-height: 4.5rem;
+    margin: 5rem 0 3.3rem 0;
+}
+
+h2 {
+    font-family: 'Outfit', sans-serif;
+    color: #d20094;
+    font-size: 2.2rem;
+    margin: 0 0 0.4rem 0;
+}
+
+header img {
+    width: 12rem;
+}
+
+#titolo2 {
+    width: 60%;
+}
+
+#titolo2 p {
+    margin: 0;
+}
+
+ul {
+    padding: 25px;
+}
+
+ul li {
+    line-height: 1.5rem;
+}
+
+form {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    border: 2px solid white;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.7rem;
+}
+
+input[type="checkbox"]:checked {
+    appearance: auto;
+}
+
+#proceedbtn {
+    padding: 0.8rem 2rem;
+    border: none;
+    text-transform: uppercase;
+    background-color: #00FFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}

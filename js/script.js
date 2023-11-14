@@ -1,3 +1,4 @@
+
 let checkbox = document.querySelector("#checkbox");
 console.dir(checkbox.checked)
 
