@@ -112,8 +112,14 @@ window.addEventListener('load',()=>{
     // Spread operator: => (usato per svuotare il contenuto dell'array incorrect_answers in un altro array, quello in cui si trova (arrayAnswers)),
     // in unico array messe tutte le risposte corretta , e sbagliate.
   
-  for(let i=0; i< arrayAnswers.length;i++){                         // ciclo for per ciclare l'arrayAnswers
-    risposte.children[i].innerText = arrayAnswers[i];               // innerText alle risposte
+  for(let i=0; i< arrayAnswers.length;i++){                         // ciclo for per ciclare l'arrayAnswers, fino a 4 in questo caso
+    risposte.children[i].innerText = arrayAnswers[i];                // innerText alle risposte della variabile let risposte #risposte, ad ogni div [i] cambiamo il testo in base all'indice 
   }
-  arrayAnswers = [];
+  //console.dir(risposte)  
+  arrayAnswers = [];                                                 // azzerato l'arrayAnswer per i prossimi cicli                                 
+})
+
+
+risposte.addEventListener('click', (evento)=>{
+    
 })
