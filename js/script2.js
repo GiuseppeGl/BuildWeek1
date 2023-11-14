@@ -115,11 +115,28 @@ window.addEventListener('load',()=>{
     // Spread operator: => (usato per svuotare il contenuto dell'array incorrect_answers in un altro array, quello in cui si trova (arrayAnswers)),
     // in unico array messe tutte le risposte corretta , e sbagliate.
   
-  for(let i=0; i< arrayAnswers.length;i++){                         // ciclo for per ciclare l'arrayAnswers, fino a 4 in questo caso
-    risposte.children[i].innerText = arrayAnswers[i];                // innerText alle risposte della variabile let risposte #risposte, ad ogni div [i] cambiamo il testo in base all'indice 
-  }
+  for(let i=0; i< arrayAnswers.length;i++){      
+      let divRisposta = document.createElement('div');
+      divRisposta.classList.add('risposta');
+      divRisposta.classList.add(`risposta${i+1}`);
+      risposte.appendChild(divRisposta)                                                             // ciclo for per ciclare l'arrayAnswers, fino a 4 in questo caso
+                                                                 // innerText alle risposte della variabile let risposte #risposte, ad ogni div [i] cambiamo il testo in base all'indice   
+     }
+
+     for(let i=0; i< arrayAnswers.length;i++) {
+       risposte.children[i].innerText = arrayAnswers[i];  
+
+
+     }
+
+
+
   //console.dir(risposte)  
-  arrayAnswers = [];                                                 // azzerato l'arrayAnswer per i prossimi cicli                                 
+  arrayAnswers = []; 
+  
+
+  
+                                                                    // azzerato l'arrayAnswer per i prossimi cicli                                 
 })
 
 
@@ -137,11 +154,22 @@ risposte.addEventListener('click', (evento)=>{
     console.log(arrayAnswers)
     // Spread operator: => (usato per svuotare il contenuto dell'array incorrect_answers in un altro array, quello in cui si trova (arrayAnswers)),
     // in unico array messe tutte le risposte corretta , e sbagliate.
-  
-    for(let i=0; i< arrayAnswers.length;i++){                         // ciclo for per ciclare l'arrayAnswers, fino a 4 in questo caso
-      risposte.children[i].innerText = arrayAnswers[i];                // innerText alle risposte della variabile let risposte #risposte, ad ogni div [i] cambiamo il testo in base all'indice 
+    for(let i=0; i< arrayAnswers.length;i++){      
+      let divRisposta = document.createElement('div');
+      divRisposta.classList.add('risposta');
+      divRisposta.classList.add(`risposta${i+1}`);
+      risposte.appendChild(divRisposta)
+     
     }
+
+    for(let i=0; i< arrayAnswers.length;i++) {
+      risposte.children[i].innerText = arrayAnswers[i]; 
+
+      
+     }
+
     //console.dir(risposte)  
+    
     arrayAnswers = [];                          
     console.log(evento.target.innerText === questions[questionNumber].correct_answer);
     console.log(questionNumber);
@@ -151,10 +179,11 @@ risposte.addEventListener('click', (evento)=>{
 })
 
 
-let timeStartSecond = 30;
+
+/* let timeStartSecond = 30;
 let time = 0.5 * 60;
 
-setInterval(timer, 2000)
+setInterval(timer, 1000)
 
 function timer() {
 
@@ -172,4 +201,6 @@ if (time < 0) {
   clearInterval(timer);
 
 }
-}
+} */
+
+/* risposte.children[i].innerText = arrayAnswers[i];  */
