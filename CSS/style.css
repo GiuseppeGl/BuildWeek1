@@ -1,10 +1,11 @@
 body {
     background-image: url(../IMG/bg.jpg);
     background-size: cover;
+    background-position: center;
     color: white;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    padding: 2rem 4%;
+    padding: 2rem 9%;
 }
 
 h1 {
@@ -43,9 +44,11 @@ ul li {
 }
 
 form {
+    margin: 3rem 0;
     font-weight: 500;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 input[type="checkbox"] {
@@ -53,6 +56,7 @@ input[type="checkbox"] {
     border: 2px solid white;
     width: 1rem;
     height: 1rem;
+    margin: 0;
     margin-right: 0.7rem;
 }
 
@@ -61,11 +65,13 @@ input[type="checkbox"]:checked {
 }
 
 #proceedbtn {
-    padding: 0.8rem 2rem;
+    cursor: pointer;
+    padding: 1rem 4rem;
     border: none;
+    box-shadow: 0 0 23px  #00FFFF;
     text-transform: uppercase;
     background-color: #00FFFF;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
