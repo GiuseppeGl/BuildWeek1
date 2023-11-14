@@ -214,3 +214,51 @@ if (time < 0) {
 } 
 
  */
+
+
+let timer = document.querySelector('.timer');
+let time = 15000;
+let circle = document.querySelector('.inner-circle');
+let outerCircle = document.querySelector('.outer-circle')
+circle.addEventListener('click', () => {
+    timer.style.background = 'conic-gradient(from 0deg, rgb(131, 193, 211) 0deg, transparent 0deg)'
+})
+
+// console.dir(timer)
+
+let timeInSeconds = time / 1000;
+let refresh = 100;
+let totCycles = time / refresh
+let remainingCycles = totCycles;
+circle.innerText = timeInSeconds;
+
+function handleTimer(time){
+    let interval = setInterval(() => {
+        remainingCycles--;
+
+        let gradi = (360 / totCycles) * (totCycles - remainingCycles);
+        timer.style.background = `conic-gradient(from 0deg, rgb(131, 193, 211) ${gradi}deg, transparent ${gradi}deg)`
+        // console.log('ciao')
+        if(gradi > 280){
+            outerCircle.style.background = 'rgb(255, 42, 0)';
+        } else if(gradi > 200){
+            outerCircle.style.background = 'rgb(255, 139, 49)';
+        }
+    }, refresh); 
+
+
+    let seconds = setInterval(() => {
+        timeInSeconds--; 
+        circle.innerText = timeInSeconds;
+    }, 1000 );
+
+
+    setTimeout(() => {
+        clearInterval(interval);
+        clearInterval(seconds);
+
+    }, time ) 
+}
+
+handleTimer(time);
+
