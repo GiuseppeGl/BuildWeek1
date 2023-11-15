@@ -1,5 +1,22 @@
+body {
+    background-image: url(../IMG/bg.jpg);
+    height: 100vh;
+}
+
 #starRating {
 
+    height: 50px; 
+    width: 250px;
     background-image: url(../IMG/starifoa.svg);
     background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.star {
+
+    display: inline-block;
+    background-image: url(../IMG/starifoa.svg);
+    background-repeat: no repeat;
+    list-style: none;
+
 }
