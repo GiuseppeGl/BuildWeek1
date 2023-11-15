@@ -1,6 +1,10 @@
 body {
+
     background-image: url(../IMG/bg.jpg);
     height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #starRating {
