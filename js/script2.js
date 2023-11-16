@@ -16,7 +16,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -94,176 +94,84 @@ const questions = [
   },
 ];
 
-let punteggio = 0; // definito variabile globale per punteggio utente
-let questionNumber = 0; // variabile per tenere traccia del numero o posizione della domanda presentata
-let arrayAnswers = []; // array che contiene le risposte
-let risposte = document.querySelector("#risposte"); // variabile che seleziona il  div con id #risposte
 
-let h1 = document.querySelector("h1"); //selezionato h1
-
+let punteggio = 0;
+let questionNumber = 0;
+let arrayAnswers = [];
+let risposte = document.querySelector("#risposte");
+let h1 = document.querySelector("h1");
 let arrayRisposteAzzeccate = [];
 let arrayRisposteSbagliate = [];
 
-window.addEventListener("load", () => {
-  h1.innerText = questions[questionNumber].question; //funzione che riporta la prima domanda che pesca dentro l'array questions
+window.addEventListener("load", setupQuestion);
+
+function setupQuestion() {
+  h1.innerText =questions[questionNumber].question;
   arrayAnswers = [
     ...questions[questionNumber].incorrect_answers,
     questions[questionNumber].correct_answer,
   ];
-  console.log(arrayAnswers);
-  // Spread operator: => (usato per svuotare il contenuto dell'array incorrect_answers in un altro array, quello in cui si trova (arrayAnswers)),
-  // in unico array messe tutte le risposte corretta , e sbagliate.
 
+  risposte.innerHTML = "";
   for (let i = 0; i < arrayAnswers.length; i++) {
     let divRisposta = document.createElement("div");
     divRisposta.classList.add("risposta");
-    divRisposta.classList.add(`risposta${i + 1}`);
-    risposte.appendChild(divRisposta); // ciclo for per ciclare l'arrayAnswers, fino a 4 in questo caso
-    // innerText alle risposte della variabile let risposte #risposte, ad ogni div [i] cambiamo il testo in base all'indice
+    divRisposta.innerText = arrayAnswers[i];
+    divRisposta.addEventListener("click", () => changeQuestion(arrayAnswers[i]));
+    risposte.appendChild(divRisposta);
   }
 
-  for (let i = 0; i < arrayAnswers.length; i++) {
-    risposte.children[i].innerText = arrayAnswers[i];
-  }
+  updateQuestionCounter();
+  handleTimer(time); // Imposta il timer per 5 secondi
+}
 
-  //console.dir(risposte)
-  arrayAnswers = [];
-
-  updateQuestionCounter();                                      //richiamo la funzione per tenere traccia dell'avanzamento del test
-
-  // azzerato l'arrayAnswer per i prossimi cicli
-});
-
-
-risposte.addEventListener("click", (evento) => changeQuestion(evento))
-
-
-function updateQuestionCounter() {                                                  // Funzione per aggiornare l'avanzamento del test
+function updateQuestionCounter() {
   let questionCounter = document.querySelector(".questionCounter");
-  questionCounter.innerHTML = "";                                                  // Pulisce i vecchi contatori di domande
-  let counterRisposte = document.createElement("p");
-  counterRisposte.innerHTML = `<p class="questionCounter">QUESTION ${questionNumber + 1}<span>/${
+  questionCounter.innerHTML = `<p class="questionCounter">QUESTION ${questionNumber + 1}<span>/${
     questions.length
-  }</span> </p>` ;
-  questionCounter.appendChild(counterRisposte);
+  }</span> </p>`;
 }
-
-
-
-/* 
- let timeStartSecond = 30;
-let time = 0.5 * 60;
-
-setInterval(timer, 1000)
-
-function timer() {
-
-let seconds = time % 60;
-
-let timerDom = document.querySelector('#timer')
-
-timerDom.innerHTML = `${seconds}`;
-
-
-time--;
-
-if (time < 0) {
-
-  clearInterval(timer);
-
-}
-} 
-
- */
 
 let timer = document.querySelector(".timer");
-let time = 5000;
-let circle = document.querySelector(".inner-circle");
-let outerCircle = document.querySelector(".outer-circle");
- circle.addEventListener("click", () => {
-  timer.style.background =
-    "conic-gradient(from 0deg, rgb(131, 193, 211) 0deg, transparent 0deg)";
-}); 
-
-// console.dir(timer)
-
-let timeInSeconds = time / 1000;
-let refresh = 100;
-let totCycles = time / refresh;
-let remainingCycles = totCycles;
-let divSecond = document.querySelector('#seconds');
-divSecond.innerText = timeInSeconds;
+let time = 60000;
+let currentInterval; // Variabile per tenere traccia dell'intervallo corrente
 
 function handleTimer(time) {
-  let interval = setInterval(() => {
+  if (currentInterval) {
+    clearInterval(currentInterval); // Cancella l'intervallo corrente prima di iniziarne uno nuovo
+  }
+  let remainingTime = time;
+  let refreshInterval = 100;
+  let totalCycles = time / refreshInterval;
+  let remainingCycles = totalCycles;
+  let divSecond = document.querySelector('#seconds');
+
+  currentInterval = setInterval(() => {
     remainingCycles--;
+    remainingTime -= refreshInterval;
+    let degrees = (360 / totalCycles) * (totalCycles - remainingCycles);
+    timer.style.background = `conic-gradient(from 0deg, rgb(131, 193, 211) ${degrees}deg, transparent ${degrees}deg)`;
 
-    let gradi = (360 / totCycles) * (totCycles - remainingCycles);
-    timer.style.background = `conic-gradient(from 0deg, rgb(131, 193, 211) ${gradi}deg, transparent ${gradi}deg)`;
-    // console.log('ciao')
-    if (gradi > 280) {
-      outerCircle.style.background = "rgb(255, 42, 0)";
-    } else if (gradi > 200) {
-      outerCircle.style.background = "rgb(255, 139, 49)";
-    }
-  }, refresh);
-
-  let seconds = setInterval(() => {
-    timeInSeconds--;
+    let timeInSeconds = Math.ceil(remainingTime / 1000);
     divSecond.innerText = timeInSeconds;
-  }, 1000);
 
-  setTimeout(() => {
-    clearInterval(interval);
-    clearInterval(seconds);
-    /* changeQuestion(evento); */
-  }, time);
+    if (remainingTime <= 0) {
+      clearInterval(currentInterval);
+      changeQuestion();
+    }
+  }, refreshInterval);
 }
 
-handleTimer(time);
+function changeQuestion(selectedAnswer = '') {
+  if (selectedAnswer && selectedAnswer === questions[questionNumber].correct_answer) {
+    arrayRisposteAzzeccate.push(questions[questionNumber]);
+  } else if (selectedAnswer) {
+    arrayRisposteSbagliate.push(questions[questionNumber]);
+  } 
 
-
-
-function changeQuestion(evento) {
   if (questionNumber < questions.length - 1) {
-    risposte.innerHTML = "";
-    if (evento.target.innerText === questions[questionNumber].correct_answer) {
-      arrayRisposteAzzeccate.push(questions[questionNumber]);
-    } else {
-      arrayRisposteSbagliate.push(questions[questionNumber]);
-    }
-
     questionNumber++;
-
-    h1.innerText = questions[questionNumber].question; //funzione che riporta la prima domanda che pesca dentro l'array questions
-    arrayAnswers = [
-      ...questions[questionNumber].incorrect_answers,
-      questions[questionNumber].correct_answer,
-    ];
-    console.log(arrayAnswers);
-    // Spread operator: => (usato per svuotare il contenuto dell'array incorrect_answers in un altro array, quello in cui si trova (arrayAnswers)),
-    // in unico array messe tutte le risposte corretta , e sbagliate.
-    for (let i = 0; i < arrayAnswers.length; i++) {
-      let divRisposta = document.createElement("div");
-
-      divRisposta.classList.add("risposta");
-      divRisposta.classList.add(`risposta${i + 1}`);
-      risposte.appendChild(divRisposta);
-    }
-
-    for (let i = 0; i < arrayAnswers.length; i++) {
-      risposte.children[i].innerText = arrayAnswers[i];
-    }
-    updateQuestionCounter();                                                      // ad ogni click aggiorno il contatore dell'avanzamento del test
-    //console.dir(risposte)
-
-    arrayAnswers = [];
-    console.log(
-      evento.target.innerText === questions[questionNumber].correct_answer
-    );
-    console.log(questionNumber);
-    console.log(arrayRisposteAzzeccate);
-    console.log(arrayRisposteSbagliate);
+    setupQuestion(); // Prepara la nuova domanda
   } else {
     location.href = "index3.html";
   }
