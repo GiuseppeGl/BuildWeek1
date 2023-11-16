@@ -8,9 +8,13 @@ body {
     padding: 2rem 9%;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+}
 
 header img {
-   width: 12rem;
+   height: 2rem;
 }
 
 h1 {
@@ -38,14 +42,13 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;    /* frazione del contenitore */
     text-align: center;
-
 }
 
 
 
 .timer {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 
     border-radius: 50%;
     display: flex;
@@ -55,16 +58,16 @@ h1 {
   }
 
   .inner-circle{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     background-color:rgb(178, 178, 178) ;
     border-radius: 50%;
     text-align: center;
-    font-size: 5rem;
+    font-size: 3.2rem;
   }
 .outer-circle{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     background: rgb(0, 200, 255);
     border-radius: 50%;
 }

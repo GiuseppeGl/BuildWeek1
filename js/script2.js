@@ -223,10 +223,10 @@ let timer = document.querySelector(".timer");
 let time = 15000;
 let circle = document.querySelector(".inner-circle");
 let outerCircle = document.querySelector(".outer-circle");
-circle.addEventListener("click", () => {
+/* circle.addEventListener("click", () => {
   timer.style.background =
     "conic-gradient(from 0deg, rgb(131, 193, 211) 0deg, transparent 0deg)";
-});
+}); */
 
 // console.dir(timer)
 
@@ -234,7 +234,8 @@ let timeInSeconds = time / 1000;
 let refresh = 100;
 let totCycles = time / refresh;
 let remainingCycles = totCycles;
-circle.innerText = timeInSeconds;
+divSecond.innerText = timeInSeconds;
+let divSecond = document.querySelector('#seconds')
 
 function handleTimer(time) {
   let interval = setInterval(() => {
@@ -252,7 +253,7 @@ function handleTimer(time) {
 
   let seconds = setInterval(() => {
     timeInSeconds--;
-    circle.innerText = timeInSeconds;
+    divSecond.innerText = timeInSeconds;
   }, 1000);
 
   setTimeout(() => {
