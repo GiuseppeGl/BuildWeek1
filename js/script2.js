@@ -99,7 +99,7 @@ let punteggio = 0;
 let questionNumber = 0;
 let arrayAnswers = [];
 let risposte = document.querySelector("#risposte");
-let h1 = document.querySelector("h1");
+let h1 = document.querySelector("h1#title2");
 let arrayRisposteAzzeccate = [];
 let arrayRisposteSbagliate = [];
 
@@ -176,3 +176,11 @@ function changeQuestion(selectedAnswer = '') {
     location.href = "index3.html";
   }
 }
+
+
+/*-- Pagina 3 --*/
+
+
+
+
+

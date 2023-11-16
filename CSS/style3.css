@@ -1,0 +1,16 @@
+body {
+    background-image: url(../IMG/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    padding: 2rem 9%;
+}
+
+header img {
+    height: 2rem;
+}
+main{
+    text-align: center;
+}
