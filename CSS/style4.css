@@ -1,26 +1,23 @@
 body {
-
     background-image: url(../IMG/bg.jpg);
-    height: 100vh;
-    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    padding: 2rem 9%;
 }
 
-#starRating {
-
-    height: 50px; 
-    width: 250px;
-    background-image: url(../IMG/starifoa.svg);
-    background-repeat: no-repeat;
-    cursor: pointer;
+header img {
+    height: 2rem;
+}
+main{
+    text-align: center;
 }
 
 .star {
-
-    display: inline-block;
-    background-image: url(../IMG/starifoa.svg);
-    background-repeat: no repeat;
-    list-style: none;
-
+    width: 100px;
+    height: auto;
+    margin: 500px 0;
+    filter: brightness(0.13);
 }
