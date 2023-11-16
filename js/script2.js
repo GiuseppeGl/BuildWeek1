@@ -180,10 +180,10 @@ let timer = document.querySelector(".timer");
 let time = 5000;
 let circle = document.querySelector(".inner-circle");
 let outerCircle = document.querySelector(".outer-circle");
-/* circle.addEventListener("click", () => {
+ circle.addEventListener("click", () => {
   timer.style.background =
     "conic-gradient(from 0deg, rgb(131, 193, 211) 0deg, transparent 0deg)";
-}); */
+}); 
 
 // console.dir(timer)
 
@@ -216,7 +216,7 @@ function handleTimer(time) {
   setTimeout(() => {
     clearInterval(interval);
     clearInterval(seconds);
-    changeQuestion();
+    /* changeQuestion(evento); */
   }, time);
 }
 
@@ -224,7 +224,7 @@ handleTimer(time);
 
 
 
-function changeQuestion() {
+function changeQuestion(evento) {
   if (questionNumber < questions.length - 1) {
     risposte.innerHTML = "";
     if (evento.target.innerText === questions[questionNumber].correct_answer) {
