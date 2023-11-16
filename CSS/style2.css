@@ -57,6 +57,9 @@ h1 {
     grid-template-columns: 1fr 1fr;    /* frazione del contenitore */
     text-align: center;
 }
+.risposta1:hover, .risposta2:hover, .risposta3:hover, .risposta4:hover {
+    background-image: linear-gradient(to bottom, #d20093, #d2009381);
+}
 
 .inner-circle :not(#seconds) {
     font-size: 8px;

@@ -116,6 +116,7 @@ function setupQuestion() {
   for (let i = 0; i < arrayAnswers.length; i++) {
     let divRisposta = document.createElement("div");
     divRisposta.classList.add("risposta");
+    divRisposta.classList.add("risposta",`risposta${i+1}`);
     divRisposta.innerText = arrayAnswers[i];
     divRisposta.addEventListener("click", () => changeQuestion(arrayAnswers[i]));
     risposte.appendChild(divRisposta);
