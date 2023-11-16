@@ -174,16 +174,12 @@ function changeQuestion(selectedAnswer = '') {
     questionNumber++;
     setupQuestion(); // Prepara la nuova domanda
   } else {
+    localStorage.setItem("questions", questions.length);
+    localStorage.setItem("arrayRisposteAzzeccate", arrayRisposteAzzeccate.length);
+    localStorage.setItem("arrayRisposteSbagliate", arrayRisposteSbagliate.length);
     location.href = "index3.html";
   }
 }
-
-
-/*-- Pagina 3 --*/
-let divCorrectPerc = document.querySelector('#correct');
-let correctPerc = arrayRisposteAzzeccate.length / questions.length * 100;
-console.log(correctPerc);
-
 
 
 
