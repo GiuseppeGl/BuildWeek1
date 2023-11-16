@@ -234,8 +234,8 @@ let timeInSeconds = time / 1000;
 let refresh = 100;
 let totCycles = time / refresh;
 let remainingCycles = totCycles;
+let divSecond = document.querySelector('#seconds');
 divSecond.innerText = timeInSeconds;
-let divSecond = document.querySelector('#seconds')
 
 function handleTimer(time) {
   let interval = setInterval(() => {
