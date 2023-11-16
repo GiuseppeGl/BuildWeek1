@@ -21,3 +21,11 @@ main{
     margin: 500px 0;
     filter: brightness(0.13);
 }
+
+.starHover {
+    filter: brightness(1);
+}
+
+.starClicked {
+    filter: brightness(1);
+}
