@@ -179,7 +179,9 @@ function changeQuestion(selectedAnswer = '') {
 
 
 /*-- Pagina 3 --*/
-
+let divCorrectPerc = document.querySelector('#correct');
+let correctPerc = arrayRisposteAzzeccate.length / questions.length * 100;
+console.log(correctPerc);
 
 
 
