@@ -44,7 +44,9 @@ h1 {
     text-align: center;
 }
 
-
+.inner-circle :not(#seconds) {
+    font-size: 8px;
+}
 
 .timer {
     width: 100px;
@@ -58,12 +60,13 @@ h1 {
   }
 
   .inner-circle{
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     background-color:rgb(178, 178, 178) ;
     border-radius: 50%;
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
+    font-weight: 200;
   }
 .outer-circle{
     width: 100px;
@@ -80,3 +83,4 @@ h1 {
 .questionCounter span{
 color:#D20094
 }
+
