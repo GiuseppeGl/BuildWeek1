@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     height: 100vh;
     padding: 2rem 9%;
 }
@@ -28,4 +28,16 @@ main{
 
 .starClicked {
     filter: brightness(1);
+}
+
+button {
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    border: none;
+    box-shadow: 0 0 23px  #00FFFF;       /* Valore 1: spostamento dx/sx | Valore 2: Spostamento su/giu | Valore 3: sfumatura | Valore 4: spread ombra | Valore 5: colore */
+    text-transform: uppercase;
+    background-color: #00FFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
 }

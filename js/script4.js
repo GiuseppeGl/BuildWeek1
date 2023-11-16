@@ -35,7 +35,6 @@ stelleSVG.forEach((stella, index) => {
             stelleSVG[i].classList.add("starClicked")
         }
     })
-
 })
 
 

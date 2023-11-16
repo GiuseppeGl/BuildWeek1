@@ -1,0 +1,22 @@
+body {
+    background-image: url(../IMG/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    padding: 7rem;
+}
+
+img {
+    border-radius: 20px;
+}
+
+p {
+   color: #00FFFF;
+   font-weight: bold;
+}
+
+p i {
+    color: red;
+}
