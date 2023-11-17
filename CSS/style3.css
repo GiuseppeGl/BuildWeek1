@@ -41,6 +41,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 6rem;
 }
 
 #outer1 {
@@ -97,7 +98,8 @@ h2 {
 
 #results {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 #correctPerc, #wrongPerc {
@@ -108,12 +110,12 @@ h2 {
 
 #correct {
     text-align: left;
-    padding-top: 7rem;
+    width: 300px;
 }
 
 #wrong {
     text-align: right;
-    padding-top: 7rem;
+    width: 300px;
 }
 
 button {

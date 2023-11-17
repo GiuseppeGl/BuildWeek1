@@ -166,6 +166,7 @@ function handleTimer(time) {
     if (remainingTime <= 0) {
       clearInterval(currentInterval);
       changeQuestion();
+      arrayRisposteSbagliate.push(questions[questionNumber]);
     }
   }, refreshInterval);
 }
