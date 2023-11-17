@@ -102,26 +102,39 @@ let risposte = document.querySelector("#risposte");
 let h1 = document.querySelector("h1#title2");
 let arrayRisposteAzzeccate = [];
 let arrayRisposteSbagliate = [];
-
+let rispostaArray = questions[questionNumber].question.split(" ");
+let rispostaPrimaParte = [];
+let rispostaSecondaParte = [];
+for(let i=0; i<rispostaArray.length-3; i++){
+  rispostaPrimaParte.push(rispostaArray[i]);
+}
+for(let i=rispostaArray.length-3; i<rispostaArray.length; i++){
+  rispostaSecondaParte.push(rispostaArray[i]);
+}
 window.addEventListener("load", setupQuestion);
 
 function setupQuestion() {
-  h1.innerText =questions[questionNumber].question;
+  h1.innerText = rispostaArray.join(" ");
   arrayAnswers = [
     ...questions[questionNumber].incorrect_answers,
     questions[questionNumber].correct_answer,
   ];
 
   risposte.innerHTML = "";
+  
   for (let i = 0; i < arrayAnswers.length; i++) {
     let divRisposta = document.createElement("div");
     divRisposta.classList.add("risposta");
     divRisposta.classList.add("risposta",`risposta${i+1}`);
+    
     divRisposta.innerText = arrayAnswers[i];
     divRisposta.addEventListener("click", () => changeQuestion(arrayAnswers[i]));
     risposte.appendChild(divRisposta);
   }
-
+  
+  /* console.log(rispostaPrimaParte);
+  console.log(rispostaSecondaParte);
+  console.log(rispostaArray); */
   updateQuestionCounter();
   handleTimer(time); // Imposta il timer per 5 secondi
 }
