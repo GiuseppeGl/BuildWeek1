@@ -6,6 +6,7 @@ body {
     font-family: 'Outfit', sans-serif;
     text-align: center;
     padding: 7rem;
+    background-attachment: fixed;
 }
 
 img {
@@ -19,4 +20,18 @@ p {
 
 p i {
     color: red;
+}
+
+@media screen and (max-width: 450px) {
+    body img {
+        width: 100%;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }
