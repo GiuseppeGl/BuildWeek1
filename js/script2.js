@@ -119,8 +119,6 @@ function setupQuestion() {
 
   h1.innerHTML = restOfWords + " <span class='bold-last-4'>" + lastFourWords + "</span>";
 
- risposte.innerHTML = "";
-
   risposte.innerHTML = "";
   for (let i = 0; i < arrayAnswers.length; i++) {
     let divRisposta = document.createElement("div");
