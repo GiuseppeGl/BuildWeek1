@@ -62,7 +62,7 @@ h1 {
 }
 
 .inner-circle :not(#seconds) {
-    font-size: 8px;
+    font-size: 6px;
 }
 
 .timer {
@@ -79,7 +79,7 @@ h1 {
   .inner-circle{
     width: 75px;
     height: 75px;
-    background-color:rgb(178, 178, 178) ;
+    background-color:rgb(178, 178, 178);
     border-radius: 50%;
     text-align: center;
     font-size: 2.5rem;
