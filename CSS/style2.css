@@ -6,6 +6,7 @@ body {
     font-family: 'Inter', sans-serif;
     height: 100vh;
     padding: 2rem 9%;
+    background-attachment: fixed;
 }
 
 header {
@@ -47,7 +48,7 @@ h1 {
     padding: 1rem;
     margin: 1rem 0.5rem;
     border: 4px solid transparent; 
-    border-radius: 2rem;
+    border-radius: 4rem;
     cursor: pointer;
     box-shadow:  0 0 0 3px rgba(255, 255, 255, 0.8);
     
@@ -143,4 +144,12 @@ color:#D20094
 
 .bold-last-4 {
     font-weight: bold;
+}
+
+
+@media screen and (max-width:800px){
+    #risposte{
+        display:flex;
+        flex-direction: column;
+    }
 }
