@@ -74,6 +74,12 @@ button {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
     line-height: 3rem;
+    color: white;
+    outline: none; 
+
 }
 
+#commet:focus {
 
+    outline: none;
+}
