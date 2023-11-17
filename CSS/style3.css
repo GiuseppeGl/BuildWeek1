@@ -6,6 +6,7 @@ body {
     font-family: 'Outfit', sans-serif;
     height: 100vh;
     padding: 2rem 9%;
+    background-attachment: fixed;
 }
 
 header img {
@@ -65,6 +66,8 @@ h2 {
 }
 
 #innerCircle {
+    display:flex;
+    flex-direction: column;
     width: 270px;
     height: 270px;
     border-radius: 50%;
@@ -75,9 +78,9 @@ h2 {
 
 #passOrNot {
     font-size: 1.2rem;
-    padding-top: 0.7rem;
+    
     margin-bottom: 0;
-    margin-top: 2rem;
+    
     display: flex;
     justify-content: center;
 }
@@ -140,4 +143,29 @@ button {
     font-weight: 200;
     font-size: 1.3rem;
     margin: 0;
+}
+
+@media screen and (max-width:1100px){
+    #correct h2,#correct p,#wrong h2,#wrong p{
+        font-size: 2rem;
+    }
+    #correct, #wrong{
+        width: auto;
+    }
+    #circle{
+        margin: 0 2rem;
+    }
+}
+
+@media screen and (max-width:700px){
+    #results{
+        display:flex;
+        flex-direction: column;
+    }
+    #correct,#wrong{
+        text-align: center;
+    }
+    #circle{
+        margin: 2rem 0;
+    }
 }
