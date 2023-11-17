@@ -4,21 +4,44 @@ body {
     background-repeat: no-repeat;
     color: white;
     font-family: 'Outfit', sans-serif;
-    height: 100vh;
-    padding: 2rem 9%;
+    
+    background-position: center;
+   
 }
-
+main{text-align: center;
+  
+    margin: 5rem 10rem;
+    padding: 3rem 0;
+}
+h1{
+    font-size: 3rem;
+}
+p{
+    font-size: 1.4rem;
+}
+#starRating{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 2rem;
+}
 header img {
-    height: 2rem;
+    width: 12rem;
+    margin-left: 5rem;
+    margin-top: 2rem;
 }
-main{
+.intro{
     text-align: center;
 }
 
+.final{text-align: center;
+    
+  
+}
 .star {
-    width: 100px;
-    height: auto;
-    margin: 500px 0;
+    width: 4rem;
+   
+  margin: 0 1rem;
     filter: brightness(0.13);
 }
 
@@ -41,3 +64,16 @@ button {
     font-weight: bold;
     font-size: 1.5rem;
 }
+
+#comment{
+    border: none;
+    border-bottom: 3px solid #D20094;
+    width: 50rem;
+    margin:3rem 0;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+
+

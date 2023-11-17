@@ -11,12 +11,18 @@
     <title>Feedback Page</title>
 </head>
 <body>
-    
+    <header>
+        <img src="IMG/epicode_logo.png" alt="Logo Epicode" id="logo">
+    </header>
 <main>
-        
+    
+
+        <div class="intro">
+
+      
     <h1><strong>Tell us how it's going</strong></h1>
     <p>From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</p>
-
+  </div>
     <div id="starRating">
             <img src="IMG/starifoa.svg" class="star" data-rating="1">
             <img src="IMG/starifoa.svg" class="star" data-rating="2">
@@ -29,15 +35,17 @@
             <img src="IMG/starifoa.svg" class="star" data-rating="9">
             <img src="IMG/starifoa.svg" class="star" data-rating="10">
     </div>
+<div class="final">
+
 
     <p>Leave us an open feedback about your experience so far</p>
 
     <form action="">
-        <input type="text" placeholder="Write your comment here">
-        <input type="hidden" name="stars" id="starsLeft">
+        <input id="comment" type="text" placeholder="    Write your comment here"> <br>
+        
         <a href="index5.html"><button type="button">MORE INFO</button></a>
     </form>
-
+</div>
 </main>
     <script src="js/script4.js"></script>
 </body>
