@@ -112,6 +112,13 @@ function setupQuestion() {
     questions[questionNumber].correct_answer,
   ];
 
+   
+   let words = questions[questionNumber].question.trim().split(" ");
+   let lastFourWords = words.slice(-4).join(" ");
+   let restOfWords = words.slice(0, -4).join(" ");
+
+   h1.innerHTML = restOfWords + " <span class='bold-last-4'>" + lastFourWords + "</span>";
+
   risposte.innerHTML = "";
   for (let i = 0; i < arrayAnswers.length; i++) {
     let divRisposta = document.createElement("div");
