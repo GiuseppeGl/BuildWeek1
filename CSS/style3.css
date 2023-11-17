@@ -44,8 +44,8 @@ h2 {
 }
 
 #outer1 {
-    width: 200px;
-    height: 200px;
+    width: 370px;
+    height: 370px;
     background-color: #00FFFF;
     border-radius: 50%;
 }
@@ -54,21 +54,36 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 370px;
+    height: 370px;
     border-radius: 50%;
 /*     background: conic-gradient(from 0deg, #d20094 45deg, transparent 45deg); */
 }
 
 #innerCircle {
-    width: 150px;
-    height: 150px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
-    background-color: rgb(186, 186, 0);
+    background-image: url("../IMG/bg.jpg");
+    
+}
+
+
+#passOrNot {
+    font-size: 1.3rem;
+    padding-top: 0.7rem;
+    margin-bottom: 0;
 }
 
 #azzurro {
+    font-size: 1.3rem;
+    margin: 0;
     color: #00FFFF;
+}
+
+#certificate {
+    text-align: center;
+    padding: 0 2rem;
 }
 
 #results {
