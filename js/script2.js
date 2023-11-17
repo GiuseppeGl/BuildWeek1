@@ -111,6 +111,7 @@ function setupQuestion() {
     ...questions[questionNumber].incorrect_answers,
     questions[questionNumber].correct_answer,
   ];
+  arrayAnswers.sort(() => Math.random() - 0.5);
 
   let words = questions[questionNumber].question.trim().split(" ");
   let lastFourWords = words.slice(-4).join(" ");
