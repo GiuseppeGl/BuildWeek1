@@ -61,29 +61,38 @@ h2 {
 }
 
 #innerCircle {
-    width: 260px;
-    height: 260px;
+    width: 270px;
+    height: 270px;
     border-radius: 50%;
     background-image: url("../IMG/bg.jpg");
-    
+    justify-content: center;
 }
 
 
 #passOrNot {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding-top: 0.7rem;
     margin-bottom: 0;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 #azzurro {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0;
     color: #00FFFF;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.6rem;
 }
 
 #certificate {
     text-align: center;
     padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 200;
 }
 
 #results {
@@ -99,10 +108,12 @@ h2 {
 
 #correct {
     text-align: left;
+    padding-top: 7rem;
 }
 
 #wrong {
     text-align: right;
+    padding-top: 7rem;
 }
 
 button {
