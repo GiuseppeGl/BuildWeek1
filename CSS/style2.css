@@ -149,5 +149,32 @@ color:#D20094
     #risposte{
         display:flex;
         flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
+    }
+
+    header {
+        margin-bottom: 2rem;
+    }
+
+    .risposta{
+        width: 100%;
+        margin: 1rem 0rem;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .questionCounter{
+        margin-top: 1rem;
     }
 }
