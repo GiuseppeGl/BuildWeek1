@@ -79,7 +79,7 @@ h1 {
   .inner-circle{
     width: 75px;
     height: 75px;
-    background-color:rgb(178, 178, 178);
+    background-image: url("../IMG/bg.jpg");
     border-radius: 50%;
     text-align: center;
     font-size: 2.5rem;
