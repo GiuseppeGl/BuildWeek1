@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;
     color: white;
     font-family: 'Outfit', sans-serif;
-    
+    background-attachment: fixed;
     background-position: center;
    
 }
@@ -12,6 +12,9 @@ main{text-align: center;
   
     margin: 5rem 10rem;
     padding: 3rem 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 h1{
     font-size: 3rem;
@@ -24,6 +27,7 @@ p{
     justify-content: center;
     align-items: center;
     margin: 3rem 2rem;
+    width: 85%;
 }
 header img {
     width: 12rem;
@@ -68,7 +72,7 @@ button {
 #comment{
     border: none;
     border-bottom: 3px solid #D20094;
-    width: 50rem;
+    width: 80%;
     margin:3rem 0;
     background-color: transparent;
     font-family: 'Inter', sans-serif;
@@ -76,10 +80,39 @@ button {
     line-height: 3rem;
     color: white;
     outline: none; 
-
+    padding-left: 1.5rem;
 }
 
-#commet:focus {
+#comment:focus {
 
     outline: none;
+}
+
+@media (max-width: 800px){
+.star{
+    margin: 0;
+}
+main{
+    margin: 3rem 2rem;
+}
+}
+@media (max-width: 450px){
+    header{
+        text-align: center;
+        
+    }
+    header img{
+        width: 8rem;
+        margin-left: 0;
+    }
+    .star{ 
+        width: 2rem;
+    }
+    #comment{
+        padding-left: 0;
+    }
+    main{
+        margin-top: 0;
+        padding-top: 1rem;
+    }
 }
