@@ -84,6 +84,7 @@ h1 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 200;
+    
   }
 .outer-circle{
     width: 100px;
@@ -99,6 +100,17 @@ h1 {
 .inner-circle div:first-child{
     padding-top: 10px;
 }
+
+.inner-circle div:not(#seconds){ /**/
+    font-size: 0.4rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+}
+
+/* .inner-circle div:last-child{
+    
+} */
 
 .questionCounter{
     text-align: center;
