@@ -91,6 +91,14 @@ h1 {
     background: rgb(0, 200, 255);
     border-radius: 50%;
 }
+#seconds{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.inner-circle div:first-child{
+    padding-top: 10px;
+}
 
 .questionCounter{
     text-align: center;
