@@ -40,3 +40,36 @@ let sbagliate = (RisposteSbagliate / QuestionsTot * 100) * 3.6
 
 outer2.style.background = `conic-gradient(from 0deg, #d20094 ${sbagliate}deg, transparent ${sbagliate}deg)`
 
+
+
+// effetto sfondo cerchio trasparente
+
+function calcolaNuoveDimensioni(Wo, Ho, Wt, Ht) {
+    let scalaOrizzontale = Wt / Wo;
+    let scalaVerticale = Ht / Ho;
+    let scalaFinale = Math.max(scalaOrizzontale, scalaVerticale);
+  
+    let Wn = Wo * scalaFinale;
+    let Hn = Ho * scalaFinale;
+  
+    return { larghezza: Wn, altezza: Hn };
+  }
+  
+  let larghezzaOriginale = 1024;
+  let altezzaOriginale = 768;
+  
+  function applicaNuoveDimensioni() {
+    let larghezzaViewport = window.innerWidth;
+    let altezzaViewport = window.innerHeight;
+  
+    let nuoveDimensioni = calcolaNuoveDimensioni(larghezzaOriginale, altezzaOriginale, larghezzaViewport, altezzaViewport);
+  
+    let innerCircle = document.querySelector('#innerCircle');
+    innerCircle.style.backgroundSize = `${nuoveDimensioni.larghezza}px ${nuoveDimensioni.altezza}px`;
+    console.log(nuoveDimensioni.larghezza, nuoveDimensioni.altezza)
+  }
+  // Aggiungi un gestore di eventi 'resize' alla finestra
+  window.addEventListener('resize', applicaNuoveDimensioni);
+  
+  // Esegui la funzione iniziale per impostare le dimensioni iniziali
+  applicaNuoveDimensioni();

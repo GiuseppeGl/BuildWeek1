@@ -73,6 +73,9 @@ h2 {
     border-radius: 50%;
     background-image: url("../IMG/bg.jpg");
     justify-content: center;
+    background-position: calc(-50vw + 185px) -400px;
+    background-repeat: no-repeat;
+
 }
 
 
