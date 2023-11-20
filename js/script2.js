@@ -125,13 +125,29 @@ function setupQuestion() {
     divRisposta.classList.add("risposta");
     divRisposta.classList.add("risposta",`risposta${i+1}`);
     divRisposta.innerText = arrayAnswers[i];
-    divRisposta.addEventListener("click", () => changeQuestion(arrayAnswers[i]));
+    divRisposta.addEventListener("click", () =>{
+      if (divRisposta.innerText===questions[questionNumber].correct_answer){
+        divRisposta.style.backgroundColor = "green"
+        setTimeout(() => {
+          changeQuestion(arrayAnswers[i]);
+        }, 1000);
+      }else{
+        divRisposta.style.backgroundColor = "red"
+        setTimeout(() => {
+          changeQuestion(arrayAnswers[i]);
+        }, 1000);
+        
+      }
+     
+    } );
     risposte.appendChild(divRisposta);
   }
 
   updateQuestionCounter();
   handleTimer(time); // Imposta il timer per 5 secondi
 }
+
+
 
 function updateQuestionCounter() {
   let questionCounter = document.querySelector(".questionCounter");
