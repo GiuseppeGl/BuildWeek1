@@ -31,6 +31,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin-top: 15rem;
+    padding-bottom: 10rem;
 }
 
 button {
@@ -69,5 +70,6 @@ button {
 
     button {
         margin-bottom: 4rem;
+    
     }
 }
