@@ -1,4 +1,4 @@
-const questions = [
+/* const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -92,8 +92,11 @@ const questions = [
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
-];
+]; */
 
+const domande = localStorage.getItem("questions");
+let questions = JSON.parse(domande);
+console.log(questions)
 
 let punteggio = 0;
 let questionNumber = 0;
@@ -127,12 +130,20 @@ function setupQuestion() {
     divRisposta.innerText = arrayAnswers[i];
     divRisposta.addEventListener("click", () =>{
       if (divRisposta.innerText===questions[questionNumber].correct_answer){
+        divRisposta.style.backgroundImage = "none"
         divRisposta.style.backgroundColor = "green"
+        divRisposta.addEventListener('mouseover', () => {
+          divRisposta.style.backgroundColor = "green"
+        })
         setTimeout(() => {
           changeQuestion(arrayAnswers[i]);
         }, 1000);
       }else{
+        divRisposta.style.backgroundImage = "none"
         divRisposta.style.backgroundColor = "red"
+        divRisposta.addEventListener('mouseover', () => {
+          divRisposta.style.backgroundColor = "red"
+        })
         setTimeout(() => {
           changeQuestion(arrayAnswers[i]);
         }, 1000);

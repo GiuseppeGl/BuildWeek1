@@ -31,7 +31,7 @@ if(parseInt(correctPerc.innerText) >= 60) {
 else {
     passOrNot.innerText = "Too bad!";
     azzurro.innerText = "You didn't pass the exam.";
-    certificate.innerText = "You'll receive stocazzo";
+    certificate.innerText = "You'll receive stoca**o";
 }
 
 //Riempimento cerchio risposte in base a percentuale

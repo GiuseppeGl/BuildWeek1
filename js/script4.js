@@ -7,6 +7,8 @@
 let contenitoreStelle = document.querySelector("#starRating");
 let button = document.querySelector("button");
 let starsLeft = document.querySelector("#starsLeft");
+let starsRec = document.querySelector("#starsRec");
+let comment = document.querySelector("#comment");
 
 //Nel "contenitoreStelle" prendi ogni elemento (stella) aggiungi un Event Listener che vede l'hover e aggiunge la classe "starHover"(che serve a colorarla)
 
@@ -30,11 +32,19 @@ stelleSVG.forEach((stella, index) => {
         })
     })
     stella.addEventListener("click", () => {
+        starsRec.value = index+1
         stelleSVG.forEach(stella => stella.classList.remove("starClicked"))
         for(let i=0; i<= index; i++){
             stelleSVG[i].classList.add("starClicked")
         }
     })
+})
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (starsRec.value > 0 && comment.value !== ""){
+    location.href = "index5.html"
+    }
 })
 
 

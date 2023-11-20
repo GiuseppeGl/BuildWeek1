@@ -55,7 +55,7 @@ h1 {
 #risposte {
     min-width: 650px;
     width: 60%;
-    margin: auto;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;    /* frazione del contenitore */
     text-align: center;
@@ -154,7 +154,8 @@ color:#D20094
         display:flex;
         flex-direction: column;
         margin: 0;
-        width: 100%;
+        width: 90%;
+        min-width: 0;
     }
 
     h1{
