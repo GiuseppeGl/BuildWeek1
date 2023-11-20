@@ -42,9 +42,12 @@ stelleSVG.forEach((stella, index) => {
 
 button.addEventListener('click', (e) => {
     e.preventDefault();
-    if (starsRec.value > 0 && comment.value !== ""){
-    location.href = "index5.html"
+    if (starsRec.value === "ciao") {
+        alert("Please rate EPICODE before continuing.");
+    } else if (comment.value.trim() === "") {
+        alert("Please leave a comment before continuing.");
+    } else {
+        location.href = "index5.html";
     }
-})
-
+});
 
