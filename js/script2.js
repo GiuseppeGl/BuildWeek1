@@ -168,7 +168,7 @@ function updateQuestionCounter() {
 }
 
 let timer = document.querySelector(".timer");
-let time = 10000;
+let time = 30000;
 let currentInterval; // Variabile per tenere traccia dell'intervallo corrente
 
 function handleTimer(time) {
