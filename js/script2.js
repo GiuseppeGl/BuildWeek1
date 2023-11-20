@@ -105,10 +105,12 @@ let risposte = document.querySelector("#risposte");
 let h1 = document.querySelector("h1#title2");
 let arrayRisposteAzzeccate = [];
 let arrayRisposteSbagliate = [];
+let selectedAnswer = false;
 
 window.addEventListener("load", setupQuestion);
 
 function setupQuestion() {
+  let selectedAnswer = false;
   h1.innerText =questions[questionNumber].question;
   arrayAnswers = [
     ...questions[questionNumber].incorrect_answers,
@@ -128,22 +130,23 @@ function setupQuestion() {
     divRisposta.classList.add("risposta");
     divRisposta.classList.add("risposta",`risposta${i+1}`);
     divRisposta.innerText = arrayAnswers[i];
-    divRisposta.addEventListener("click", () =>{
+    divRisposta.addEventListener("click", (event) =>{
+      if (!selectedAnswer) {
+        selectedAnswer = true; // Imposta la risposta come selezionata
+        const clickedAnswer = event.target;
       if (divRisposta.innerText===questions[questionNumber].correct_answer){
-        divRisposta.style.backgroundImage = "none"
-        divRisposta.style.backgroundColor = "green"
-        divRisposta.addEventListener('mouseover', () => {
-          divRisposta.style.backgroundColor = "green"
-        })
-        setTimeout(() => {
-          changeQuestion(arrayAnswers[i]);
-        }, 1000);
-      }else{
-        divRisposta.style.backgroundImage = "none"
-        divRisposta.style.backgroundColor = "red"
-        divRisposta.addEventListener('mouseover', () => {
-          divRisposta.style.backgroundColor = "red"
-        })
+        clickedAnswer.style.backgroundImage = "none";
+        clickedAnswer.style.backgroundColor = "green";
+        clickedAnswer.addEventListener('mouseover', () => {
+          clickedAnswer.style.backgroundColor = "green";
+        });
+      } else {
+        // Codice per la risposta errata
+        clickedAnswer.style.backgroundImage = "none";
+        clickedAnswer.style.backgroundColor = "red";
+        clickedAnswer.addEventListener('mouseover', () => {
+          clickedAnswer.style.backgroundColor = "red";
+        })}
         setTimeout(() => {
           changeQuestion(arrayAnswers[i]);
         }, 1000);
